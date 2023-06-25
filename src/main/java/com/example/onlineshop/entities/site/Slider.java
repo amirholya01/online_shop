@@ -1,5 +1,8 @@
 package com.example.onlineshop.entities.site;
 
+import org.springframework.lang.Nullable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +16,8 @@ public class Slider {
     private String link;
     private String image;
     private String description;
-    private Integer order;
+    @Column(nullable = true, name = "order_item")
+    private int orderItem;
 
     public long getId() {
         return id;
@@ -56,10 +60,10 @@ public class Slider {
     }
 
     public Integer getOrder() {
-        return order;
+        return orderItem;
     }
 
     public void setOrder(Integer order) {
-        this.order = order;
+        this.orderItem = order;
     }
 }
